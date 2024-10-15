@@ -6,18 +6,18 @@ Elastic animation that makes the widget bounce back smoothly.
 
 ## Usage
 ``` dart
-        ElasticBlob(
-          radius: blobRadius,
-          underBlobWidget: Icon(
-            Icons.close,
-            color: Theme.of(context).colorScheme.onSurface,
-            size: blobRadius,
-          ),
-          aboveBlobWidget: Icon(
-            Icons.close,
-            color: Theme.of(context).colorScheme.onPrimary,
-            size: blobRadius,
-          ),
-          duration: const Duration(milliseconds: 350),
-        );
+ElasticBlob(
+  radius: blobRadius,
+  underBlobWidget: Icon(
+    Icons.close,
+    color: Theme.of(context).colorScheme.onSurface,
+    size: blobRadius,
+  ),
+  aboveBlobWidget: Icon(
+    Icons.close,
+    color: Theme.of(context).colorScheme.onPrimary,
+    size: blobRadius,
+  ),
+  duration: const Duration(milliseconds: 350),
+);
 ```
