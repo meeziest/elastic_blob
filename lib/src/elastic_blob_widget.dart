@@ -32,7 +32,6 @@ class ElasticBlob extends StatefulWidget {
 }
 
 class _ElasticBlobState extends State<ElasticBlob> {
-  final GlobalKey _blobKey = GlobalKey();
   double _rotationAngle = 0;
   Offset _blobCenter = Offset.zero;
   Offset _pointerPosition = Offset.zero;
@@ -72,8 +71,7 @@ class _ElasticBlobState extends State<ElasticBlob> {
 
   /// Updates the icon's center, rotation angle, and stretch properties.
   void _updateBlobTransformations() {
-    final context = _blobKey.currentContext;
-    final renderBox = context?.findRenderObject() as RenderBox?;
+    final renderBox = context.findRenderObject() as RenderBox?;
     if (renderBox != null) {
       _blobCenter = renderBox.localToGlobal(renderBox.size.center(Offset.zero));
 
@@ -117,7 +115,6 @@ class _ElasticBlobState extends State<ElasticBlob> {
                     child: widget.underBlobWidget,
                   ),
                   CustomPaint(
-                    key: _blobKey,
                     size: Size(widget.radius * 2, widget.radius * 2),
                     painter: BlobPainter(
                       color: widget.color ?? theme.colorScheme.primary,
