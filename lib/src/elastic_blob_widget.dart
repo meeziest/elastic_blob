@@ -34,7 +34,7 @@ class ElasticBlob extends StatefulWidget {
 class _ElasticBlobState extends State<ElasticBlob> {
   final GlobalKey _blobKey = GlobalKey();
   double _rotationAngle = 0;
-  Offset _iconCenter = Offset.zero;
+  Offset _blobCenter = Offset.zero;
   Offset _pointerPosition = Offset.zero;
   double _stretchFactor = 1.0;
   double _stretchDistance = 0;
@@ -75,10 +75,10 @@ class _ElasticBlobState extends State<ElasticBlob> {
     final context = _blobKey.currentContext;
     final renderBox = context?.findRenderObject() as RenderBox?;
     if (renderBox != null) {
-      _iconCenter = renderBox.localToGlobal(renderBox.size.center(Offset.zero));
+      _blobCenter = renderBox.localToGlobal(renderBox.size.center(Offset.zero));
 
-      _rotationAngle = _computeRotationAngle(_iconCenter, _pointerPosition);
-      _stretchDistance = (_pointerPosition - _iconCenter).distance.clamp(0, widget.maxStretchDistance);
+      _rotationAngle = _computeRotationAngle(_blobCenter, _pointerPosition);
+      _stretchDistance = (_pointerPosition - _blobCenter).distance.clamp(0, widget.maxStretchDistance);
 
       _calculateStretchFactor(renderBox);
     }
