@@ -1,7 +1,7 @@
 name: elastic_blob
 description: "A new Flutter project."
 version: 0.0.1
-homepage:
+homepage: https://github.com/meeziest/elastic_blob
 
 environment:
   sdk: ^3.5.0
